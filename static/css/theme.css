@@ -23,3 +23,8 @@
 .traffic{
   grid-row: 1 / 4;
 }
+
+.messages{
+  height: 60%;
+  overflow: auto;
+}

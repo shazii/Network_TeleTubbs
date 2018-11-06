@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title>TeleTubbs</title>
     <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/theme.css')}}">
+    <script src="{{ url_for('static',filename='js/func.js')}}"></script>
   </head>
 
   <body style="background-color:powderblue;">
@@ -13,16 +14,18 @@
 
       <div class=client>
         <h3>Client</h3>
+
+        <div id="messagingBox" class=messages>
+          {% for data in data %}
+            <p>{{ data }}</p>
+            <script>scrollToBottom();</script>
+          {% endfor %}
+        </div>
+
         <form action="/" method="post">
           <input id="comment" type="text" name="comment"></input>
           <input type="submit" value="Send"></input>
         </form>
-        
-        <div id='info_section'>
-          {% for data in data %}
-            <p>{{ data }}</p>
-          {% endfor %}
-        </div>
         
       </div>
 
