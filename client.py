@@ -24,8 +24,9 @@ while True:
       n = int(n)
     else:
       n = 0
-  with open('templates/quantity.txt','w'):
-    pass
+  if n != 0:
+    with open('templates/quantity.txt','w'):
+      pass
   while n > 0:
     payload = {'quote': "1"}
     r = requests.post(url, json=payload)
