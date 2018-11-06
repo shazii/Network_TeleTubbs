@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, request, redirect
+import random
+
 app = Flask(__name__)
 
 """
@@ -17,17 +19,38 @@ def hello_world():
 """
 comments = []
 
+def generateQuotes():
+    with open("static/quotes.txt", encoding="utf8") as f:
+            line = next(f)
+            for num, aline in enumerate(f,2):
+                if random.randrange(num):
+                    if line.startswith('--'):
+                        line = line[3:]
+                    elif line.startswith('\n'):
+                        line = next(f)
+                    continue
+                line = aline
+    return line
+
 @app.route('/', methods = ['GET', 'POST'])
 def hello_world():
     if request.method == 'GET':
         return render_template('index.html', data=comments)
     if request.method == 'POST':
-        comment = request.form['comment']
-        if comment.upper() == 'CLEAR' and len(comment) != 0:
-            del comments[:]
+        n = request.form['quantity']
+        if n == "":
+            return render_template('index.html', data=comments)
         else:
-            comments.append(comment)
-        return render_template("index.html", data=comments)
+            with open('templates/quantity.txt','w') as f:
+                f.write(n)
+            for n in range(int(n)):  
+                comment = generateQuotes()
+                comments.append(comment)
+            return render_template("index.html", data=comments)
+
+@app.route('/post', methods = ['POST'])
+def hello_world_post():
+    return render_template("index.html", data=request.data)
 
 if __name__ == "__main__":
     app.run()    

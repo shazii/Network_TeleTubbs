@@ -18,13 +18,23 @@
 
 .client {
   grid-row: 1 / 5;
+  width: 700px;
 }
 
 .traffic{
   grid-row: 1 / 4;
+  width: 500px;
+}
+
+.congestion{
+  width: 500px;
 }
 
 .messages{
-  height: 60%;
+  height: 70%;
+  width: 80%;
+  padding-left: 50px;
+  padding-left: 50px;
   overflow: auto;
+  font-size: 18px;
 }
