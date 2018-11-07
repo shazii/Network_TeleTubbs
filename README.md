@@ -2,10 +2,14 @@
 
 ## Team Name: TeleTubbs ##
 
-## Title of Project: Chat server application with some additional features, eg. detect congestion and provide feedback ##
+## Title of Project: Chat Server Application ##
 
-## Team Members: Tracy Yee Enying (1002379), Valerene Goh Ze Yi (1002457), 
-Sng Xue Le Candace (1002276), Rahmathulla Shameena Nilofar (1002532) ##
+## Team Members: Tracy Yee Enying (1002379), Valerene Goh Ze Yi (1002457), Sng Xue Le Candace (1002276), Rahmathulla Shameena Nilofar (1002532) ##
+
+## Features ##
+* Send and receive messages
+* Monitor traffic and detect congestion
+* Feedback on congestion control
 
 ### Instructions to how to run TeleTubbs Chat Server Application ###
 
@@ -26,17 +30,17 @@ f. In the "Status" box, the current status shows whether the traffic is normal o
 
 ### Beta version of our chat server application: ###
 
-When you first launch the chat server application:
+#### When you first launch the chat server application: ####
 
 ![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Launch%20Webpage.png)
 
 
-Normal traffic:
+#### Normal traffic: ####
 
 ![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Normal%20Traffic.png)
 
 
-Congested traffic:
+#### Congested traffic: ####
 
 ![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Congested%20Traffic.png)
 
