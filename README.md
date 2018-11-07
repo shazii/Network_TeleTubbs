@@ -1,17 +1,21 @@
 # 50.012 Networks Project #
 
-## Team Name: TeleTubbs ##
+Team Name: TeleTubbs
 
-## Title of Project: Chat Server Application ##
+Title of Project: Chat Server Application
 
-## Team Members: Tracy Yee Enying (1002379), Valerene Goh Ze Yi (1002457), Sng Xue Le Candace (1002276), Rahmathulla Shameena Nilofar (1002532) ##
+Team Members: 
+* Tracy Yee Enying (1002379)
+* Valerene Goh Ze Yi (1002457)
+* Sng Xue Le Candace (1002276)
+* Rahmathulla Shameena Nilofar (1002532)
 
 ## Features ##
 * Send and receive messages
 * Monitor traffic and detect congestion
 * Feedback on congestion control
 
-### Instructions to how to run TeleTubbs Chat Server Application ###
+## Instructions to how to run TeleTubbs Chat Server Application ##
 
 1. Please install the following libraries: 
 * flask
