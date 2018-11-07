@@ -47,7 +47,7 @@ def generateGraph():
     # Processpcap, creatingpygal chart with packet sizes
     pkt_sizes = []
     pkt_window = []
-    cap = pyshark.FileCapture("trace/fuzz-2006-06-26-2594.pcap", only_summaries=True)
+    cap = pyshark.FileCapture("trace/traffic.pcap", only_summaries=True)
     for packet in cap:
         # Create a point with X=time, Y=bytes
         pkt_sizes.append((float(packet.time), int(packet.length)))
@@ -85,5 +85,5 @@ def hello_world_post():
     return render_template("index.html", data=request.data)
 
 if __name__ == "__main__":
-    app.run()
-    #app.run(debug=True)
+    #app.run()
+    app.run(debug=True)
