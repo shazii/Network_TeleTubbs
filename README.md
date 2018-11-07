@@ -25,12 +25,12 @@
 * requests
 
 2. Using Python 3:
-  * Run server.py
-  * Run client.py
-  * Run pcap2.py
-  * Open "http://127.0.0.1:5000" localhost on your webserver (preferably Chrome). Enter the desired number of packets to be sent (any integer above 0) in the input field at the bottom of the "Client" box.
-  * You will then be able to view the traffic, i.e. the size of the packets sent over time (refer to the "Traffic" box for the graph), based on the packets captured using Wireshark.
-  * In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
+  i. Run server.py
+  ii. Run client.py
+  iii. Run pcap2.py
+  iv. Open "http://127.0.0.1:5000" localhost on your webserver (preferably Chrome). Enter the desired number of packets to be sent (any integer above 0) in the input field at the bottom of the "Client" box.
+  v. You will then be able to view the traffic, i.e. the size of the packets sent over time (refer to the "Traffic" box for the graph), based on the packets captured using Wireshark.
+  vi. In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
 
 ## Beta version of our chat server application: ##
 
