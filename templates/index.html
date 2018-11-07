@@ -8,9 +8,16 @@
 
   <body style="background-color:powderblue;">
 
-    <h2>Tele Tubbs</h2>
+    <h2>TeleTubbs</h2>
 
     <div class="grid-container">
+
+      <div class=traffic>
+        <h3>Traffic</h3>
+        {{ chart|safe }}
+      </div>
+
+      <div class=congestion>3</div>  
 
       <div class=client>
         <h3>Client</h3>
@@ -27,11 +34,7 @@
           <input id="submission" type="submit" value="Send"></input>
         </form>
         
-      </div>
-
-      <div class=traffic>2</div>
-
-      <div class=congestion>3</div>      
+      </div>    
 
     </div>
 

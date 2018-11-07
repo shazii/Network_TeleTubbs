@@ -2,6 +2,12 @@
 
 from flask import Flask, render_template, request, redirect
 import random
+import os
+import pyshark
+from datetime import datetime
+from pygal import XY
+from pygal.style import LightGreenStyle
+from werkzeug import secure_filename
 
 app = Flask(__name__)
 
@@ -32,54 +38,52 @@ def generateQuotes():
                 line = aline
     return line
 
+def generateGraph():
+    # Save uploaded file
+    #traceFile = request.files['file']
+    #filename = secure_filename('{}{}'.format(datetime.now(), traceFile.filename))
+    #traceFile.save(filename)  
+     
+    # Processpcap, creatingpygal chart with packet sizes
+    pkt_sizes = []
+    pkt_window = []
+    cap = pyshark.FileCapture("trace/fuzz-2006-06-26-2594.pcap", only_summaries=True)
+    for packet in cap:
+        # Create a point with X=time, Y=bytes
+        pkt_sizes.append((float(packet.time), int(packet.length)))
+     
+    # Create pygal instance
+    pkt_size_chart = XY(width=400, height=300, style=LightGreenStyle, explicit_size=True)
+    pkt_size_chart.title = 'Packet Sizes'
+            
+    # Add points to chart andrender html
+    pkt_size_chart.add('Size', pkt_sizes)
+    chart = pkt_size_chart.render().decode("utf-8")
+
+    return chart
+
 @app.route('/', methods = ['GET', 'POST'])
 def hello_world():
     if request.method == 'GET':
-        return render_template('index.html', data=comments)
+        chart = generateGraph()
+        return render_template('index.html', data=comments, chart=chart)
     if request.method == 'POST':
         n = request.form['quantity']
+        chart = generateGraph()
         if n == "":
-            return render_template('index.html', data=comments)
+            return render_template('index.html', data=comments, chart=chart)
         else:
             with open('templates/quantity.txt','w') as f:
                 f.write(n)
             for n in range(int(n)):  
                 comment = generateQuotes()
                 comments.append(comment)
-            return render_template("index.html", data=comments)
+            return render_template("index.html", data=comments, chart=chart)
 
 @app.route('/post', methods = ['POST'])
 def hello_world_post():
     return render_template("index.html", data=request.data)
 
 if __name__ == "__main__":
-    app.run()    
-
-"""
-from flask import Flask, redirect, url_for, request, json, jsonify
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Welcome to Tele Tubbs API<br><br><a href="/login">PLEASE LOGIN<a>'
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] == 'username' and request.form['password'] == 'password':
-            return redirect(url_for('mainpage'))
-    return '''<form action="" method="post">
-        <input type="text" placeholder="Username" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <input type="submit" value="Login">
-    </form>'''
-
-
-@app.route('/mainpage', methods=['GET','POST'])
-def mainpage():
-  return contact_form
-
-if __name__ == "__main__":
-    app.run(debug=True)
-"""
+    app.run()
+    #app.run(debug=True)
