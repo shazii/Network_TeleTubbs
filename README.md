@@ -1,16 +1,16 @@
 # 50.012 Networks Project #
 
-Team Name: TeleTubbs
+*Team Name:* TeleTubbs
 
-Title of Project: Chat Server Application
+*Title of Project:* Chat Server Application
 
-Team Members: 
+*Team Members:*
 * Tracy Yee Enying (1002379)
 * Valerene Goh Ze Yi (1002457)
 * Sng Xue Le Candace (1002276)
 * Rahmathulla Shameena Nilofar (1002532)
 
-## Features ##
+*Features:*
 * Send and receive messages
 * Monitor traffic and detect congestion
 * Feedback on congestion control
@@ -25,12 +25,12 @@ Team Members:
 * requests
 
 2. Using Python 3:
-a. Run server.py
-b. Run client.py
-c. Run pcap2.py
-d. Open "http://127.0.0.1:5000" localhost on your webserver (preferably Chrome). Enter the desired number of packets to be sent (any integer above 0) in the input field at the bottom of the "Client" box.
-e. You will then be able to view the traffic, i.e. the size of the packets sent over time (refer to the "Traffic" box for the graph), based on the packets captured using Wireshark.
-f. In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
+  1. Run server.py
+  2. Run client.py
+  3. Run pcap2.py
+  4. Open "http://127.0.0.1:5000" localhost on your webserver (preferably Chrome). Enter the desired number of packets to be sent (any integer above 0) in the input field at the bottom of the "Client" box.
+  5. You will then be able to view the traffic, i.e. the size of the packets sent over time (refer to the "Traffic" box for the graph), based on the packets captured using Wireshark.
+  6. In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
 
 ### Beta version of our chat server application: ###
 
