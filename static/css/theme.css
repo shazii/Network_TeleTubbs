@@ -4,32 +4,33 @@
   grid-gap: 10px;
   margin-left: 10%;
   margin-right: 10%;
-  background-color:powerblue;
+  background-color: powerblue;
   padding: 10px;
-  height:80%;
 }
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 10px 0;
   font-size: 30px;
 }
 
 .client {
-  grid-row: 1 / 5;
-  width: 700px;
+  grid-row: 1 / span 4;
+  width: 500px;
 }
 
 .traffic{
-  grid-row: 1 / 4;
+  grid-row: 1 / span 3;
   width: 500px;
-  height: 450px;
 }
 
 .congestion{
+  grid-row: 4 / span 1;
   width: 500px;
-  height: 130px;
+  font-size: 18px;
+}
+
+.congestion p{
   font-size: 18px;
 }
 
@@ -40,4 +41,8 @@
   padding-left: 50px;
   overflow: auto;
   font-size: 18px;
+}
+
+#comment, #submission, .messages, h2, h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
