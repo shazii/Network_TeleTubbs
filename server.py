@@ -39,8 +39,8 @@ def generateGraph():
     # Create pygal instance
     pkt_size_chart = XY(width=400, height=300, style=LightGreenStyle, explicit_size=True)
     pkt_size_chart.title = 'PACKET SIZES'
-    pkt_size_chart.x_title = 'time (s)'
-    pkt_size_chart.y_title = 'cwnd (bytes)'
+    pkt_size_chart.x_title = 'Number of Packets'
+    pkt_size_chart.y_title = 'Size of Packet (bytes)'
             
     # Add points to chart and render html
     pkt_size_chart.add('Size', pkt_sizes)
