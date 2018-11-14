@@ -13,27 +13,40 @@ app = Flask(__name__)
 
 comments = []
 
+
 def generateQuotes():
+    '''
+        Function that returns random lines from a text file containing quotes.
+        These lines serve as a placeholder for messages sent by the client and
+        to simulate the user experience (for example, what the client will see
+        on the webpage when he/she sends a certain number of messages).
+    '''
     with open("static/quotes.txt", encoding="utf8") as f:
-            line = next(f)
-            for num, aline in enumerate(f,2):
-                if random.randrange(num):
-                    if line.startswith('--'):
-                        line = line[3:]
-                    elif line.startswith('\n'):
-                        line = next(f)
-                    continue
-                line = aline
+        line = next(f) # read first line of quotes.txt
+        for num, aline in enumerate(f,2): # generate a random number within the number of lines in f
+            if random.randrange(num): # check if the current line matches the generated number
+                if line.startswith('--'): # line is a name (end of quote)
+                    line = line[3:] # only return the name itself (remove '--')
+                elif line.startswith('\n'): # empty line (in between quotes)
+                    line = next(f) # return the first line of the next quote
+                continue # valid line --> exit loop
+            line = aline
     return line
 
 def generateGraph():
-    
-    # Process pcap, create pygal chart with packet sizes
+    '''
+        Function that generates the graph which plots the traffic (packet
+        size against number of packets). This allows the client to monitor
+        the traffic easily, hence improving the user experience while using
+        the webpage.
+    '''
+    # process pcap and create a pygal chart with packet sizes
     pkt_sizes = []
     pkt_window = []
     cap = pyshark.FileCapture("trace/traffic.pcap", only_summaries=True)
-    for packet in cap:
-        # Create a point with X=time, Y=bytes
+
+    for packet in cap: # for each packet in the pygal chart
+        # create a point (X = time, Y = packet size in bytes) and add it to the list
         pkt_sizes.append((float(packet.time), int(packet.length)))
      
     # Create pygal instance
