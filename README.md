@@ -36,17 +36,17 @@
 
 #### When you first launch the chat server application: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Launch%20Webpage.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Launch%20Webpage.png)
 
 
 #### Normal traffic: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Normal%20Traffic.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Normal%20Traffic.png)
 
 
 #### Congested traffic: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Congested%20Traffic.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Congested%20Traffic.png)
 
 
 Note: The graph and the status are only fetched at time of GET/POST requests. They will be updated real-time in the backend but the updated figures will not be displayed unless the page is refreshed (send another request).
