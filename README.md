@@ -29,7 +29,7 @@
     2. Run client.py
     3. Run pcap2.py
     4. Open "http://127.0.0.1:5000" localhost on your webserver (preferably Chrome). Enter the desired number of packets to be sent to the server (any integer above 0) in the input field at the bottom of the "Client" box.
-    5. You will then be able to view the traffic, i.e. real-time plot of the size of each packet (in bytes) against the number of packets (refer to the "Traffic" box for the graph). This is based on the packets captured using Wireshark.
+    5. You will then be able to view the traffic, i.e. real-time plot of the size of each packet (in bytes) against time (refer to the "Traffic" box for the graph). This is based on the packets captured using Wireshark.
     6. In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
 
 ## Beta version of our chat server application: ##
