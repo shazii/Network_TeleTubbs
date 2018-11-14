@@ -32,21 +32,21 @@
     5. You will then be able to view the traffic, i.e. real-time plot of the size of each packet (in bytes) against time (refer to the "Traffic" box for the graph). This is based on the packets captured using Wireshark.
     6. In the "Status" box, the current status shows whether the traffic is normal or congested (huge packet detected) as user feedback.
 
-## Beta version of our chat server application: ##
+## Final version of our chat server application: ##
 
 #### When you first launch the chat server application: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Launch%20Webpage.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Launch%20Webpage.png)
 
 
 #### Normal traffic: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Normal%20Traffic.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Normal%20Traffic.png)
 
 
 #### Congested traffic: ####
 
-![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Beta/Congested%20Traffic.png)
+![picture alt](https://github.com/shazii/Network_TeleTubbs/blob/master/screenshots/Final/Congested%20Traffic.png)
 
 
 Note: The graph and the status are only fetched at time of GET/POST requests. They will be updated real-time in the backend but the updated figures will not be displayed unless the page is refreshed (send another request).
