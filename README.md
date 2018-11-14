@@ -60,3 +60,4 @@ Note: The graph and the status are only fetched at time of GET/POST requests. Th
 * https://stackoverflow.com/questions/7574092/python-scapy-wrpcap-how-do-you-append-packets-to-a-pcap-file
 * https://gist.github.com/erickedji/68802
 * https://www.youtube.com/watch?v=Q9sqfPVadDY
+* https://thepacketgeek.com/pyshark-using-the-packet-object/
