@@ -51,12 +51,12 @@ def generateGraph():
      
     # Create pygal instance
     pkt_size_chart = XY(width=400, height=300, style=LightGreenStyle, explicit_size=True)
-    pkt_size_chart.title = 'PACKET SIZES'
-    pkt_size_chart.x_title = 'Number of Packets'
-    pkt_size_chart.y_title = 'Size of Packet (bytes)'
+    pkt_size_chart.title = 'PACKET SIZES OVER TIME'
+    pkt_size_chart.x_title = 'Time (s)' # absolute time between the current packet and the first packet
+    pkt_size_chart.y_title = 'Packet Size (bytes)' # length of the packet in bytes
             
     # Add points to chart and render html
-    pkt_size_chart.add('Size', pkt_sizes)
+    pkt_size_chart.add('Size', pkt_sizes) # graph legend
     chart = pkt_size_chart.render().decode("utf-8")
 
     return chart
