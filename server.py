@@ -101,6 +101,8 @@ def hello_world():
         # status - the current congestion status (NORMAL or CONGESTED)
         These arguments are dynamic data that is displayed on the webpage.
     '''
+    comments = [] # clear comments to control number of messages sent in each POST request
+    
     # view the webpage
     if request.method == 'GET':
         chart = generateGraph()
@@ -119,10 +121,14 @@ def hello_world():
             # this is used to simulate user traffic by sending one packet for each message sent by the client
             with open('templates/quantity.txt','w') as f:
                 f.write(n)
+            if int(n) > 150: # congested traffic
+                status = "WARNING! HUGE PACKET DETECTED!"
+            else: # normal traffic
+                status = "NORMAL"
             for n in range(int(n)): # repeat n times
                 comment = generateQuotes() # generate a random line from quotes.txt
                 comments.append(comment) # add to list of messages
-            return render_template("index.html", data=comments, chart=chart, status=readStatus())
+            return render_template("index.html", data=comments, chart=chart, status=status)
 
 # sub-route to simulate user traffic (packets simulating messages are sent here)
 @app.route('/post', methods = ['POST'])
